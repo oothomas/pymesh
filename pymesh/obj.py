@@ -53,7 +53,7 @@ class Obj(BaseMesh):
                     continue
 
                 elif line.lstrip().startswith(b"v"):
-                    vertices = line.replace("\n", "").split(" ")[1:]
+                    vertices = line.replace(b"\n", "").split(" ")[1:]
                     vertices_list.append(map(float, vertices))
 
                 elif line.lstrip().startswith(b"f"):
