@@ -54,7 +54,6 @@ class Obj(BaseMesh):
 
                 elif line.lstrip().startswith("v"):
                     vertices = line.replace("\n", "").split(" ")[1:]
-                    print(vertices)
                     vertices_list.append(list(map(float, vertices)))
 
                 elif line.lstrip().startswith("f"):
@@ -67,7 +66,6 @@ class Obj(BaseMesh):
                 else:
                     continue
 
-            print("ready to yeild")
             for t in triangles_list:
                 yield ([0, 0, 0], (vertices_list[t[0]], vertices_list[t[1]], vertices_list[t[2]]), 0)
 
