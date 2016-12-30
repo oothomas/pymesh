@@ -49,14 +49,14 @@ class Obj(BaseMesh):
                 if line == "":
                     break
 
-                elif line.lstrip().startswith("vn"):
+                elif line.lstrip().startswith(b"vn"):
                     continue
 
-                elif line.lstrip().startswith("v"):
+                elif line.lstrip().startswith(b"v"):
                     vertices = line.replace("\n", "").split(" ")[1:]
                     vertices_list.append(map(float, vertices))
 
-                elif line.lstrip().startswith("f"):
+                elif line.lstrip().startswith(b"f"):
                     t_index_list = []
                     for t in line.replace("\n", "").split(" ")[1:]:
                         t_index = t.split("/")[0]
