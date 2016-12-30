@@ -26,7 +26,7 @@ class Obj(BaseMesh):
 
         else:
             # Create data from file
-            with open(path, "rb") as fh:
+            with open(path, "r") as fh:
                 data = Obj.__load(fh)
             self.name = path
             self.data = data
@@ -49,17 +49,17 @@ class Obj(BaseMesh):
                 if line == "":
                     break
 
-                elif line.lstrip().startswith(b"vn"):
+                elif line.lstrip().startswith("vn"):
                     continue
 
-                elif line.lstrip().startswith(b"v"):
-                    vertices = line.replace(b"\n", b"").split(b" ")[1:]
+                elif line.lstrip().startswith("v"):
+                    vertices = line.replace("\n", "").split(" ")[1:]
                     vertices_list.append(map(float, vertices))
 
                 elif line.lstrip().startswith(b"f"):
                     t_index_list = []
-                    for t in line.replace(b"\n", b"").split(b" ")[1:]:
-                        t_index = t.split(b"/")[0]
+                    for t in line.replace("\n", "").split(" ")[1:]:
+                        t_index = t.split("/")[0]
                         t_index_list.append(int(t_index) - 1)
                     triangles_list.append(t_index_list)
 
