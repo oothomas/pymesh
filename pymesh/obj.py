@@ -56,7 +56,7 @@ class Obj(BaseMesh):
                     vertices = line.replace("\n", "").split(" ")[1:]
                     vertices_list.append(map(float, vertices))
 
-                elif line.lstrip().startswith(b"f"):
+                elif line.lstrip().startswith("f"):
                     t_index_list = []
                     for t in line.replace("\n", "").split(" ")[1:]:
                         t_index = t.split("/")[0]
