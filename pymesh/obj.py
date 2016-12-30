@@ -58,8 +58,8 @@ class Obj(BaseMesh):
 
                 elif line.lstrip().startswith(b"f"):
                     t_index_list = []
-                    for t in line.replace("\n", "").split(" ")[1:]:
-                        t_index = t.split("/")[0]
+                    for t in line.replace(b"\n", b"").split(b" ")[1:]:
+                        t_index = t.split(b"/")[0]
                         t_index_list.append(int(t_index) - 1)
                     triangles_list.append(t_index_list)
 
